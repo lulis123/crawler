@@ -17,8 +17,11 @@ for( var index = 0; index < 536; index++){
             const $ = cheerio.load(html);
             var i = index*20 + 1;
             $('.arz-storefront-product').each(function(){
-                var image = $(this).find('.arz-thumb').find('img').attr('data-original');
-                writeStream.write(`${i++},${image}\n`);
+
+                var pagina = $(this).find('.arz-cover-link').attr("href");
+                var link = "https://www.arezzo.com.br/c/sapatos" + pagina
+
+                writeStream.write(`${i++}, ${link}\n`);
             })
         }
     });
