@@ -13,14 +13,33 @@ export class FormDetails extends Component{
     }
 
     render(){
-        const { values } = this.props;
+        const { values, handleChange } = this.props;
         return(
             <MuiThemeProvider>
                 <React.Fragment>
                     <AppBar title = "Decodar Imagem!"/>
+                    <TextField
+                        hintText = "Imagem em texto"
+                        floatingLabelText = "Imagem"
+                        onChange = {handleChange('Imagem')}
+                        defaultValue = {values.Imagem}
+                    />
+                    <br/>
+                    <TextField
+                        hintText = "URL chave "
+                        floatingLabelText = "Url Chave"
+                        onChange = {handleChange('UrlChave')}
+                        defaultValue = {values.UrlChave}
+                    />
+                    <br/>
+                    <RaisedButton
+                        label = "Enviar"
+                        primary = {true}
+                        style = {StyleSheet.button}
+                        onClick = {this.continue}/>
                 </React.Fragment>
             </MuiThemeProvider>
-        )
+        );
     }
 }
 

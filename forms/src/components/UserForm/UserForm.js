@@ -3,7 +3,9 @@ import { Imagem1 } from '../../Data/Imagem1.json';
 import { Imagem2 } from '../../Data/Imagem2.json';
 import { Imagem3 } from '../../Data/Imagem3.json';
 import { URL1, URL2, URL3 } from '../../Data/URL.json'
-
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
+import ImagemFinal from "../../Data/image.jpg"
 import FormDetails from '../FormDetails/FormDetails'
 
 
@@ -47,9 +49,26 @@ export class UserForm extends Component{
                     values = {values}/>
                 )
             case 2:
-                return <h1>DEU CERTO!</h1>
+                return (
+                    <MuiThemeProvider>
+                        <React.Fragment>
+                            <AppBar title = "Decodar Imagem!"/>
+                            <h1>Deu certo!! aqui está sua imagem:</h1>
+                            <br/>
+                            <img src = {ImagemFinal}/>
+                        </React.Fragment>
+                    </MuiThemeProvider>
+                );
             case 3:
-                return <h1>DEU ERRADO!</h1>
+                return (
+                    <MuiThemeProvider>
+                    <React.Fragment>
+                        <AppBar title = "Decodar Imagem!"/>
+                        <h1>Deu Errado :(</h1>
+                    </React.Fragment>
+                </MuiThemeProvider>
+                    
+                );
         }
     }
 }
