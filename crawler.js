@@ -1,7 +1,7 @@
 const request = require('request');
 const cheerio = require('cheerio');
 const fs = require('fs');
-const writeStream =  fs.createWriteStream('imagens.txt');
+const writeStream =  fs.createWriteStream('KEY_URL.txt');
 
 //Função Request para obter o html da página de sapatos.
 for( var index = 0; index < 536; index++){
@@ -15,7 +15,8 @@ for( var index = 0; index < 536; index++){
             $('.arz-storefront-product').each(function(){
 
                 var pagina = $(this).find('.arz-cover-link').attr("href");
-                var link = "https://www.arezzo.com.br/c/sapatos" + pagina
+                console.log(pagina)
+                var link = "https://www.arezzo.com.br/c" + pagina
 
                 writeStream.write(`${link}\n`);
             })

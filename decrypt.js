@@ -22,7 +22,6 @@ exports.decode = function(base64str, filename) {
     fs.writeFileSync(path.join(__dirname, filename), buf);
 }
 
-console.log(imagem_teste);
 const encodedImage = exports.decrypt(KEY,imagem_teste);
 exports.decode(encodedImage, 'original_image');
 
