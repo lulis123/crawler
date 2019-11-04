@@ -14,7 +14,8 @@ const imagem = fs.readFileSync("./imagem_encriptada.txt","utf-8");
 let index = 1
 
 readInterface.on('line',function(line){
-    const key = md5(line)
+    const key = md5(line.trim())
+    console.log(`${index}: ${key}`)
     const encodedImage = decrypt.decrypt(key, imagem);
     decrypt.decode(encodedImage,`./imagens/image_${index++}`);
 })

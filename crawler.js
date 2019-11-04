@@ -16,7 +16,7 @@ for( var index = 0; index < 536; index++){
 
                 var pagina = $(this).find('.arz-cover-link').attr("href");
                 console.log(pagina)
-                var link = "https://www.arezzo.com.br/c" + pagina
+                var link = "https://www.arezzo.com.br" + pagina
 
                 writeStream.write(`${link}\n`);
             })
