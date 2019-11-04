@@ -19,4 +19,3 @@ readInterface.on('line',function(line){
     const encodedImage = decrypt.decrypt(key, imagem);
     decrypt.decode(encodedImage,`./imagens_geradas/image_${index++}`);
 })
-2
