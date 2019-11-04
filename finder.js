@@ -10,13 +10,13 @@ const readInterface = readline.createInterface({
     console: false
 });
 
-const imagem = fs.readFileSync("./imagem_encriptada.txt","utf-8");
+const imagem = fs.readFileSync("./imagens_encriptadas/MAIN_IMAGE_1_ENCODED_AND_ENCRYPTED.txt","utf-8");
 let index = 1
 
 readInterface.on('line',function(line){
     const key = md5(line.trim())
     console.log(`${index}: ${key}`)
     const encodedImage = decrypt.decrypt(key, imagem);
-    decrypt.decode(encodedImage,`./imagens/image_${index++}`);
+    decrypt.decode(encodedImage,`./imagens_geradas/image_${index++}`);
 })
-
+2

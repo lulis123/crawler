@@ -1,3 +1,0 @@
-console.log("Oi")
-const encodedImage = decrypt(line, imagem_teste);
-decode_base64(encodedImage, `./imagens/original_image_${image_number}.png`);     
